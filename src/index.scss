@@ -1,0 +1,214 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+//putting a star means select all elements
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+
+}
+
+html, 
+body {
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+  display: flex;
+
+}
+
+//decoraiton sidebar 
+
+.sidebar {
+  width: 300px;
+  min-width: 320px;
+  border-right: 2px groove #c1121f;
+  padding: 25px;
+
+  .logo {
+    margin-bottom: 20px;
+
+    a {
+      font-size: 25px;
+    }
+
+    b {
+      color: #c1121f;
+    }
+
+  }
+
+  .description {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #999;
+    margin-bottom: 20px;
+  }
+
+  .menu {
+    ul {
+      li {
+        a {
+          display: block;
+          font-weight: 600;
+          color: #333;
+          cursor: pointer;
+
+          //when you hover over to button ist color change
+          &:hover {
+            color: #c1121f;
+          }
+
+        }
+      }
+    }
+  }
+
+}
+
+.content {
+  flex: 1; //sayfanın geri kalanını doldurur.
+  overflow: auto;
+
+  //arama kutusu
+  .header {
+    height: 40px; //kutucuk boyutu
+    display: flex;
+    border-bottom: 2px groove #c1121f; //arama çizgisi
+    position: sticky; //top: 0 ile ikisi search çubuğunu hep üstte ve görünür tutar
+    top: 0;
+
+    .search {
+      flex: 1;
+      position: relative; //iki şeyi yan yana koyacağımız zaman bunu realtive yaparız yanına gelcek şeyi de position: absolute yaparız
+
+      input {
+        width: 100%;
+        height: 100%;
+        font-size: 15px;
+        padding: 0 22px 0 40px;
+      }
+
+      .icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+  }
+
+  .brands {
+    padding: auto;
+    .brand{
+      border: 1px solid #ddd;
+      background: #eee;
+      margin-left: 10px;
+      margin-top: 10px;
+      padding: 18px;
+      margin-bottom: 10px; // birbirleri arasında
+      &.selected{
+        border: 2px solid #c1121f;
+        
+    
+      }
+    h5{
+      font-size: 15px;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+    .brand-colors{
+      display: flex;
+      span{
+        cursor: pointer;
+        background: var(--bgColor);
+        flex: 1;
+        align-items: center;
+        display: flex;
+        height: 30px;
+        justify-content: center; // renkerin ortasındaki yazıları bu ayarlar
+        color: var(--textColor);
+      }
+    }
+    }
+  }
+}
+
+.about-Modal {
+  max-width: 700px;
+  background: #fff;
+  box-shadow: 00 15px 0 rgba(#fff, .1);
+  padding: 50px;
+  position: relative;
+
+  .close-icons {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    cursor: pointer;
+  }
+
+  h3 {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+
+  p {
+    font-size: 15px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+}
+
+.about-Overlay {
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  //in the middle of the page
+  align-items: center;
+  justify-content: center;
+  //shadow and frizzy page
+  background: rgba(#fff, .8);
+}
+
+.copied {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--bgColor);
+  color: var(--textColor);
+  padding: 15px 25px;
+  border-radius: 4px;
+  font-size: 16px;
+  z-index: 10;
+}
