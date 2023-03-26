@@ -19,12 +19,15 @@ function App() {
    const [brands,setBrands] = useState(brandsArray)
    const [selectedBrands, setSelectedBrand] = useState(brandsArray)
    const [copied, setCopied] = useState(false)
+   const [search, setSearch] = useState('')
 
     const data ={
       brands,
       selectedBrands,
       setSelectedBrand,
       setCopied,
+      search,
+      setSearch,
 
     }
 
@@ -42,6 +45,12 @@ function App() {
       }
     }, [copied])
 
+
+    useEffect(() => {
+      setBrands(brandsArray.filter(brand => brand.title.toLowerCase().includes(search)))
+    }, [search])
+  
+  
 
   return (
     //boş açıp kapatmanın adı fragment, bu birden fazla js dosyasını çalıştırmak içindir.

@@ -2,6 +2,9 @@ import Search from './Search';
 import Brand from './Brand';
 import MainContext from '../MainContext';
 import { useContext } from 'react';
+import LazyLoad from 'react-lazy-load';
+
+
 
 
 function Content() {
@@ -20,7 +23,10 @@ function Content() {
             </header>
             <section className="brands">
            {brands.map(brand =>(
-            <Brand brand = {brand}/>
+            <LazyLoad once= {true}>
+                <Brand brand = {brand}/>
+            </LazyLoad>
+          
 
            )
 

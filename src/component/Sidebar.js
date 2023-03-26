@@ -25,7 +25,7 @@ function Sidebar(props) {
             <aside className="sidebar">
 
                 <div className='logo'>
-                    <a >Renk <b>Paleti</b></a>
+                    <a >Renk Kartelası</a>
                 </div>
                 <div className="description">
                     Aradığın bütün renkler burada mevcut!
